@@ -1,0 +1,91 @@
+﻿Z '_Zoom
+ZE '_Zoom _Extents
+ZEA '_Zoom _All _Extents
+ZS '_Zoom _Selected
+ZSA '_Zoom _All _Selected
+S '_Split
+O '_Offset
+P '_Pan
+M '_Move
+U !_Undo
+POn ! _PointsOn
+POff ! _PointsOff
+C '_circle
+W '_Block
+COn '_CurvatureGraph
+COff '_CurvatureGraphOff
+PlugInManager ! _OptionsPage _PlugIns
+AdvancedDisplay ! _OptionsPage _AdvancedSettings
+DisplayAttrsMgr ! _OptionsPage _AdvancedSettings
+L '_Line
+CO '_Copy
+I '_insert
+A '_Arc
+E '_delete
+J '_join
+X '_explode
+F '_fillet
+DI '_distance
+G '_group
+ZA '_Zoom_All
+T '_Trim
+MI '_Mirror
+RO '_Rotate
+DB '_DupBorder
+DE '_DupEdge
+OS '_OffsetSrf
+IS '_Intersect
+ES '_ShowEdges
+ET '_Extrude
+SU '_Untrim
+SX '_ExtendSrf
+MA '_Match
+SL '_Loft
+AR '_Radius
+AC _CurvatureGraph
+AS '_CurvatureAnalysis
+AL '_Length
+AA '_Angle
+AD '_Dir
+CXS '_ExtendCrvOnSrf
+CX '_Extend
+SXC '_ExtrudeCrvAlongCrv
+SM '_MergeSrf
+DL '_DimLinear
+DA '_DimAligned
+DR '_DimRadius
+DD '_DimDiameter
+R '_Rebuild
+DAN '_DimAngle
+SF '_FilletSrf
+S1 '_Sweep1
+S2 '_Sweep2
+SN '_NetworkSrf
+SE '_EdgeSrf
+SR '_Revolve
+FN '_Fin
+SC '_ConnectSrf
+CC '_Connect
+SOV '_VariableOffsetSrf
+SB '_BlendSrf
+SI '_Silhouette
+SFV '_VariableFilletSrf
+SBV '_VariableBlendSrf
+SCF '_ChamberSrf
+SP '_PlanarSrf
+ON '_OffsetNormal
+CB '_Blend
+CF '_Fair
+CCL '_CloseCrv
+SMO '_Smooth
+EM '_MergeEdge
+EJ '_JoinEdge
+LI '_List
+SC1 '_Scale1D
+SC2 '_Scale2D
+SC3 '_Scale
+RO3 '_Rotate3D
+EX '_ExtrudeCrv
+PL '_Plane
+PS '_PlanarSrf
+PU '_Purge

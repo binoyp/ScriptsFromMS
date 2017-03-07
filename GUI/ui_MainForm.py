@@ -1,0 +1,146 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'mainForm.ui'
+#
+# Created by: PyQt4 UI code generator 4.11.4
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtGui.QWidget(MainWindow)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.horizontalLayout_6 = QtGui.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_6.setObjectName(_fromUtf8("horizontalLayout_6"))
+        self.verticalLayout = QtGui.QVBoxLayout()
+        self.verticalLayout.setContentsMargins(-1, -1, -1, 0)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        self.horizontalLayout_2 = QtGui.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
+        self.wid_btnSetoffsetfile = QtGui.QPushButton(self.centralwidget)
+        self.wid_btnSetoffsetfile.setObjectName(_fromUtf8("wid_btnSetoffsetfile"))
+        self.horizontalLayout_2.addWidget(self.wid_btnSetoffsetfile)
+        self.wid_leOffsetfile = QtGui.QLineEdit(self.centralwidget)
+        self.wid_leOffsetfile.setObjectName(_fromUtf8("wid_leOffsetfile"))
+        self.horizontalLayout_2.addWidget(self.wid_leOffsetfile)
+        self.wid_btnViewoffset = QtGui.QPushButton(self.centralwidget)
+        self.wid_btnViewoffset.setObjectName(_fromUtf8("wid_btnViewoffset"))
+        self.horizontalLayout_2.addWidget(self.wid_btnViewoffset)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.line_2 = QtGui.QFrame(self.centralwidget)
+        self.line_2.setFrameShape(QtGui.QFrame.HLine)
+        self.line_2.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_2.setObjectName(_fromUtf8("line_2"))
+        self.verticalLayout.addWidget(self.line_2)
+        self.horizontalLayout_3 = QtGui.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
+        self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setObjectName(_fromUtf8("label"))
+        self.horizontalLayout_3.addWidget(self.label)
+        self.wid_Chkdb = QtGui.QCheckBox(self.centralwidget)
+        self.wid_Chkdb.setObjectName(_fromUtf8("wid_Chkdb"))
+        self.horizontalLayout_3.addWidget(self.wid_Chkdb)
+        self.wid_Chkbatchrun = QtGui.QCheckBox(self.centralwidget)
+        self.wid_Chkbatchrun.setObjectName(_fromUtf8("wid_Chkbatchrun"))
+        self.horizontalLayout_3.addWidget(self.wid_Chkbatchrun)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.line = QtGui.QFrame(self.centralwidget)
+        self.line.setFrameShape(QtGui.QFrame.HLine)
+        self.line.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line.setObjectName(_fromUtf8("line"))
+        self.verticalLayout.addWidget(self.line)
+        self.wid_lstConfigfiles = QtGui.QListWidget(self.centralwidget)
+        self.wid_lstConfigfiles.setObjectName(_fromUtf8("wid_lstConfigfiles"))
+        self.verticalLayout.addWidget(self.wid_lstConfigfiles)
+        self.horizontalLayout_5 = QtGui.QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(_fromUtf8("horizontalLayout_5"))
+        self.wid_btnAddfile = QtGui.QPushButton(self.centralwidget)
+        self.wid_btnAddfile.setObjectName(_fromUtf8("wid_btnAddfile"))
+        self.horizontalLayout_5.addWidget(self.wid_btnAddfile)
+        self.cmdClearout = QtGui.QPushButton(self.centralwidget)
+        self.cmdClearout.setObjectName(_fromUtf8("cmdClearout"))
+        self.horizontalLayout_5.addWidget(self.cmdClearout)
+        self.wid_btnRemfile = QtGui.QPushButton(self.centralwidget)
+        self.wid_btnRemfile.setObjectName(_fromUtf8("wid_btnRemfile"))
+        self.horizontalLayout_5.addWidget(self.wid_btnRemfile)
+        self.verticalLayout.addLayout(self.horizontalLayout_5)
+        self.cmdRun = QtGui.QPushButton(self.centralwidget)
+        self.cmdRun.setObjectName(_fromUtf8("cmdRun"))
+        self.verticalLayout.addWidget(self.cmdRun)
+        self.wid_Txtout = QtGui.QPlainTextEdit(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Calibri"))
+        font.setPointSize(10)
+        self.wid_Txtout.setFont(font)
+        self.wid_Txtout.setObjectName(_fromUtf8("wid_Txtout"))
+        self.verticalLayout.addWidget(self.wid_Txtout)
+        self.horizontalLayout_6.addLayout(self.verticalLayout)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setObjectName(_fromUtf8("menubar"))
+        self.menuFile = QtGui.QMenu(self.menubar)
+        self.menuFile.setObjectName(_fromUtf8("menuFile"))
+        self.menuResults_Analysis = QtGui.QMenu(self.menubar)
+        self.menuResults_Analysis.setObjectName(_fromUtf8("menuResults_Analysis"))
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionOpen_Work_State = QtGui.QAction(MainWindow)
+        self.actionOpen_Work_State.setObjectName(_fromUtf8("actionOpen_Work_State"))
+        self.actionExit = QtGui.QAction(MainWindow)
+        self.actionExit.setObjectName(_fromUtf8("actionExit"))
+        self.actionSet_Paths = QtGui.QAction(MainWindow)
+        self.actionSet_Paths.setObjectName(_fromUtf8("actionSet_Paths"))
+        self.actionOptim_Files_View = QtGui.QAction(MainWindow)
+        self.actionOptim_Files_View.setObjectName(_fromUtf8("actionOptim_Files_View"))
+        self.menuFile.addAction(self.actionOpen_Work_State)
+        self.menuFile.addAction(self.actionSet_Paths)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionExit)
+        self.menuResults_Analysis.addAction(self.actionOptim_Files_View)
+        self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuResults_Analysis.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QObject.connect(self.actionExit, QtCore.SIGNAL(_fromUtf8("triggered()")), MainWindow.close)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(_translate("MainWindow", "Ship Flow Manager", None))
+        self.wid_btnSetoffsetfile.setText(_translate("MainWindow", "Set &Offset File", None))
+        self.wid_btnViewoffset.setText(_translate("MainWindow", "View Offsets", None))
+        self.label.setText(_translate("MainWindow", "Configuration files", None))
+        self.wid_Chkdb.setText(_translate("MainWindow", "Save to DB", None))
+        self.wid_Chkbatchrun.setText(_translate("MainWindow", "Batch Run", None))
+        self.wid_btnAddfile.setText(_translate("MainWindow", "&Add File", None))
+        self.cmdClearout.setText(_translate("MainWindow", "Clear Output", None))
+        self.wid_btnRemfile.setText(_translate("MainWindow", "Remove", None))
+        self.cmdRun.setText(_translate("MainWindow", "Run Ship Flow", None))
+        self.menuFile.setTitle(_translate("MainWindow", "File", None))
+        self.menuResults_Analysis.setTitle(_translate("MainWindow", "Results Analysis", None))
+        self.actionOpen_Work_State.setText(_translate("MainWindow", "Open Work State", None))
+        self.actionExit.setText(_translate("MainWindow", "Exit", None))
+        self.actionSet_Paths.setText(_translate("MainWindow", "Preferences", None))
+        self.actionOptim_Files_View.setText(_translate("MainWindow", "Optim Files View", None))
+

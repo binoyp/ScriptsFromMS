@@ -1,0 +1,74 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov 25 21:07:43 2015
+
+@author: Binoy
+"""
+
+
+import numpy as np
+import re
+from tabulate import tabulate
+from matplotlib import pyplot as plt
+
+def getlineparam(l):
+    patt1 = re.compile(r"\s*(?P<param>\w*)\s*(?P<desc>.*)[:]{1}(?P<val>\s*[-]?\w*\.?\w*E*[+-]?\w*)")
+    mat = patt1.search(l)
+    if mat:
+        return mat.groupdict()
+    else: return  None
+        
+
+def extract_dat(f):
+    """
+    Extract important data from summary  file
+    """
+    kwd_hdr = r" *Case no *(\d) : Flow Angle = *(?P<fl_ang>\d+.?\d*) *Fn = * (?P<frno>\d+.?\d*)    Iteration no +(?P<it>\d+)"
+    patt_hdr = re.compile(kwd_hdr, re.M)
+    
+    _file = open(f,'r')
+    dic_iteration ={}
+    under_iter = 0
+        
+    for line in _file:
+#        print line
+        match = patt_hdr.match(line)
+        
+        if match:
+#            print line
+            hdrdic = match.groupdict()
+            curiter = int(hdrdic['it'].strip())
+#            print curiter
+            dic_iteration[curiter] ={}
+            under_iter = 1
+        else:
+            if under_iter:
+#                print dic_iteration
+                dic_par = getlineparam(line)
+                if  dic_par:
+                    dic_iteration[curiter][dic_par['param']] = float(dic_par['val'].strip())
+            else:
+                pass
+            
+    _file.close()
+    
+    nrow = len(dic_iteration)
+    if nrow > 1:
+        keylist = dic_iteration[1].keys()
+        fmtlist = ['f8']*len(keylist)
+
+        outarr = np.zeros((nrow), dtype = zip(keylist,fmtlist) )
+        i = 0 
+        for dic in  dic_iteration.values():
+            for k,v in dic.items():
+                outarr[i][k]= v
+            i += 1
+#        print outarr
+    return outarr
+    
+        
+        
+out =  extract_dat(r"D:\Workshop\MasterThesisDatAnal\CorrectedHull\corrected_hull_non_linear_fine\xpan_reference_8kn.config_RUN_DIR\xpan_reference_8kn.config_SUMMARY")
+disp = [ 'IT', 'ZSINK']
+plt.plot(out['IT'],out['ZSINK'])
+print tabulate(list(out[disp]), headers = disp)

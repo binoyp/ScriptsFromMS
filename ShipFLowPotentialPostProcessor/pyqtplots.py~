@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 17 11:28:11 2015
+
+@author: Binoy
+"""
+from scipy.interpolate import griddata
+
+from pyqtgraph.Qt import QtCore, QtGui
+import pyqtgraph.opengl as gl
+import sys
+from xpanFS import FreeSurface
+app = QtGui.QApplication(sys.argv)
+
+## make a widget for displaying 3D objects
+view = gl.GLViewWidget()
+view.show()
+
+## create three grids, add each to the view
+xgrid = gl.GLGridItem()
+ygrid = gl.GLGridItem()
+zgrid = gl.GLGridItem()
+view.addItem(xgrid)
+view.addItem(ygrid)
+view.addItem(zgrid)
+
+## rotate x and y grids to face the correct direction
+#xgrid.rotate(90, 0, 1, 0)
+#ygrid.rotate(90, 1, 0, 0)
+#
+### scale each grid differently
+#xgrid.scale(0.2, 0.1, 0.1)
+#ygrid.scale(0.2, 0.1, 0.1)
+import numpy as np
+path = r"C:\binSys\SFLOW\XPAN_ref\xpan_reference_9kn.config_RUN_DIR\xpan_reference_9kn.config_BMRES"
+fs = FreeSurface(path)
+size = [0.0500] * fs.N
+x = fs.Panels['x']*36.02
+y = fs.Panels['y']*36.02
+z = fs.Panels['z']*36.02
+
+grid_x, grid_y = np.mgrid[min(x): max(x):(fs.N/20)*1j, min(y): max(y):(fs.N/20)*1j]
+
+grid_z1 = griddata(zip(x,y), z, (grid_x, grid_y), method='linear')
+color  =   (0.0, 1.0, 0.0, 0.5)
+ 
+pos = np.transpose(np.vstack((x, y, z)))
+sp1 = gl.GLScatterPlotItem(pos=pos, size=size, color=color, pxMode=False)
+p2 = gl.GLSurfacePlotItem(x=grid_x[:,0], y=grid_y[0,:], z=grid_z1, shader='normalColor')
+view.addItem(p2)
+view.addItem(sp1)
+app.exec_()
